@@ -1,0 +1,14 @@
+/Users/sevketugurel/Desktop/Algoritmalar/bitwise-agirlikli-sorular/obj/Debug/net8.0/bitwise-agirlikli-sorular.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sevketugurel/Desktop/Algoritmalar/bitwise-agirlikli-sorular/obj/Debug/net8.0/bitwise-agirlikli-sorular.AssemblyInfoInputs.cache
+/Users/sevketugurel/Desktop/Algoritmalar/bitwise-agirlikli-sorular/obj/Debug/net8.0/bitwise-agirlikli-sorular.AssemblyInfo.cs
+/Users/sevketugurel/Desktop/Algoritmalar/bitwise-agirlikli-sorular/obj/Debug/net8.0/bitwise-agirlikli-sorular.csproj.CoreCompileInputs.cache
+/Users/sevketugurel/Desktop/Algoritmalar/bitwise-agirlikli-sorular/bin/Debug/net8.0/bitwise-agirlikli-sorular
+/Users/sevketugurel/Desktop/Algoritmalar/bitwise-agirlikli-sorular/bin/Debug/net8.0/bitwise-agirlikli-sorular.deps.json
+/Users/sevketugurel/Desktop/Algoritmalar/bitwise-agirlikli-sorular/bin/Debug/net8.0/bitwise-agirlikli-sorular.runtimeconfig.json
+/Users/sevketugurel/Desktop/Algoritmalar/bitwise-agirlikli-sorular/bin/Debug/net8.0/bitwise-agirlikli-sorular.dll
+/Users/sevketugurel/Desktop/Algoritmalar/bitwise-agirlikli-sorular/bin/Debug/net8.0/bitwise-agirlikli-sorular.pdb
+/Users/sevketugurel/Desktop/Algoritmalar/bitwise-agirlikli-sorular/obj/Debug/net8.0/bitwise-agirlikli-sorular.dll
+/Users/sevketugurel/Desktop/Algoritmalar/bitwise-agirlikli-sorular/obj/Debug/net8.0/refint/bitwise-agirlikli-sorular.dll
+/Users/sevketugurel/Desktop/Algoritmalar/bitwise-agirlikli-sorular/obj/Debug/net8.0/bitwise-agirlikli-sorular.pdb
+/Users/sevketugurel/Desktop/Algoritmalar/bitwise-agirlikli-sorular/obj/Debug/net8.0/bitwise-agirlikli-sorular.genruntimeconfig.cache
+/Users/sevketugurel/Desktop/Algoritmalar/bitwise-agirlikli-sorular/obj/Debug/net8.0/ref/bitwise-agirlikli-sorular.dll

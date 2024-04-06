@@ -1,0 +1,14 @@
+/Users/sevketugurel/Desktop/Algoritmalar/algoritma-lab/obj/Debug/net8.0/algoritma-lab.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sevketugurel/Desktop/Algoritmalar/algoritma-lab/obj/Debug/net8.0/algoritma-lab.AssemblyInfoInputs.cache
+/Users/sevketugurel/Desktop/Algoritmalar/algoritma-lab/obj/Debug/net8.0/algoritma-lab.AssemblyInfo.cs
+/Users/sevketugurel/Desktop/Algoritmalar/algoritma-lab/obj/Debug/net8.0/algoritma-lab.csproj.CoreCompileInputs.cache
+/Users/sevketugurel/Desktop/Algoritmalar/algoritma-lab/bin/Debug/net8.0/algoritma-lab
+/Users/sevketugurel/Desktop/Algoritmalar/algoritma-lab/bin/Debug/net8.0/algoritma-lab.deps.json
+/Users/sevketugurel/Desktop/Algoritmalar/algoritma-lab/bin/Debug/net8.0/algoritma-lab.runtimeconfig.json
+/Users/sevketugurel/Desktop/Algoritmalar/algoritma-lab/bin/Debug/net8.0/algoritma-lab.dll
+/Users/sevketugurel/Desktop/Algoritmalar/algoritma-lab/bin/Debug/net8.0/algoritma-lab.pdb
+/Users/sevketugurel/Desktop/Algoritmalar/algoritma-lab/obj/Debug/net8.0/algoritma-lab.dll
+/Users/sevketugurel/Desktop/Algoritmalar/algoritma-lab/obj/Debug/net8.0/refint/algoritma-lab.dll
+/Users/sevketugurel/Desktop/Algoritmalar/algoritma-lab/obj/Debug/net8.0/algoritma-lab.pdb
+/Users/sevketugurel/Desktop/Algoritmalar/algoritma-lab/obj/Debug/net8.0/algoritma-lab.genruntimeconfig.cache
+/Users/sevketugurel/Desktop/Algoritmalar/algoritma-lab/obj/Debug/net8.0/ref/algoritma-lab.dll
