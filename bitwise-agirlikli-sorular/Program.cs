@@ -123,6 +123,67 @@ Console.WriteLine(a);*/
 //------------------------------------------------------------------------------
 // ÖDEV!! verilen string te en uzun palindromik stringi bulan kod parçacığı
 //string str = "asdmmsnjnsdksmakd";
+/*
+static bool PalindromikMi(string st, int alt, int ust)
+{
+
+  int flag = 1;
+  while (alt <= ust)
+  {
+    if (st[alt] != st[ust])
+    {
+      flag = 0;
+      break;
+
+    }
+    alt++;
+    ust--;
+  }
+
+  if (flag == 1)
+  {
+    return true;
+  }
+  else return false;
+
+}
+
+static string EnUzunPalindrom(string st)
+{
+
+  int alt = 0, ust = 0, max = 0, zincir = 0;
+  for (int i = 0; i < st.Length; i++)
+  {
+    for (int j = st.Length - 1; j >= 0; j--)
+    {
+
+      if (st[i] == st[j])
+      {
+        if (PalindromikMi(st, i, j))
+        {
+          zincir = j - i + 1;
+          if (max < zincir)
+          {
+            max = zincir;
+            alt = i;
+            ust = j;
+          }
+        }
+      }
+
+    }
+  }
+  string st2 = "";
+  for (int i = alt; i <= ust; i++)
+  {
+    st2 += st[i];
+  }
+
+  return st2;
+
+}
+
+*/
 
 
 //------------------------------------------------------------------------------
@@ -172,6 +233,29 @@ Console.WriteLine(sayi);*/
 // ÖDEV!! verilen iki  dizideki her elemanı çarpıp çarpılan sayıların indexine çarpım sonucu yazan yeni diziye yazan kod 
 //int[] x = { 1, 3, 5, 8, 9, 0, 0, 1, 2 };
 //int[] y = { 7, 7, 4, 5, 6, 7, 8, 0, 0 };
+/*
+static int[] carpımlarDizisi(int[] x, int[] y)
+{
+    int[] z = new int[x.Length + 2];
+    int sonuc = 0;
+    int elde = 0;
+    for (int i = x.Length - 1; i >= 0; i--)
+    {
+        sonuc = x[i] * y[i] + elde;
+        if (sonuc < 10)
+        {
+            z[i] = sonuc;
+            elde = 0;
+        }
+        else
+        {
+            z[i] = sonuc % 10;
+            elde = sonuc / 10;
+        }
+    }
+    return z;
+}*/
+
 //------------------------------------------------------------------------------
 // bitwise bitsel işlemler
 // 2 lik sayı sistemi
@@ -184,16 +268,20 @@ Console.WriteLine(sayi);*/
 // 2tohex
 // 0X hex sayı demek
 
-//int a = 0x40000000;
-//a = a << 1;
-//uint u = 0x80000000;
-//u = 0xa;
-//u = u & 40000000;
-//u = u | 40000000;
-//Console.WriteLine(a);
-//Console.WriteLine(u);
+/*
+int a = 0x40000000;
+Console.WriteLine(a);
+a = a << 1;
+uint u = 0x80000000;
+u = 0xa;
+Console.WriteLine("u " + u);
+u = u & 40000000;
+Console.WriteLine("u "+ u);
+u = u | 40000000;
+Console.WriteLine("u " + u);
+Console.WriteLine(a);
 
-/*if((u & 0x1) == 1)
+if((u & 0x1) == 1)
 {
     Console.WriteLine("u tektir");
 }

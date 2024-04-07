@@ -12,3 +12,4 @@
 /Users/sevketugurel/Desktop/Algoritmalar/algoritma-lab/obj/Debug/net8.0/algoritma-lab.pdb
 /Users/sevketugurel/Desktop/Algoritmalar/algoritma-lab/obj/Debug/net8.0/algoritma-lab.genruntimeconfig.cache
 /Users/sevketugurel/Desktop/Algoritmalar/algoritma-lab/obj/Debug/net8.0/ref/algoritma-lab.dll
+/Users/sevketugurel/Desktop/Algoritmalar/algoritma-lab/obj/Debug/net8.0/algoritma-lab.sourcelink.json

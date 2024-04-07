@@ -12,3 +12,4 @@
 /Users/sevketugurel/Desktop/Algoritmalar/bitwise-agirlikli-sorular/obj/Debug/net8.0/bitwise-agirlikli-sorular.pdb
 /Users/sevketugurel/Desktop/Algoritmalar/bitwise-agirlikli-sorular/obj/Debug/net8.0/bitwise-agirlikli-sorular.genruntimeconfig.cache
 /Users/sevketugurel/Desktop/Algoritmalar/bitwise-agirlikli-sorular/obj/Debug/net8.0/ref/bitwise-agirlikli-sorular.dll
+/Users/sevketugurel/Desktop/Algoritmalar/bitwise-agirlikli-sorular/obj/Debug/net8.0/bitwise-agirlikli-sorular.sourcelink.json
