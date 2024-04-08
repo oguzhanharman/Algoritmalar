@@ -88,24 +88,24 @@ System.Console.WriteLine(PalindromMu("kazak"));
 #endregion
 #region 32bitlik sayıyı tersine cevirme
 
-// uint a = 0x00001000;
-// uint b = 0x80000000; //maske 010000000000
+uint a = 0x00001000;
+uint b = 0x80000000; //maske 010000000000
 
-// for (int i = 0; i < 32; i++)
-// {
-//   if ((a & b) != 0)
-//   {
-//     Console.Write("0");
-//   }
-//   else
-//   {
-//     Console.Write("1");
-//   }
+for (int i = 0; i < 32; i++)
+{
+  if ((a & b) != 0)
+  {
+    Console.Write("0");
+  }
+  else
+  {
+    Console.Write("1");
+  }
 
-//   b = b >> 1;
-// }
+  b = b >> 1;
+}
 
-// Console.WriteLine(Convert.ToString(a, toBase: 2));
+Console.WriteLine(Convert.ToString(a, toBase: 2));
 
 
 // //Aynı sorunun farklı çözümü
@@ -332,6 +332,7 @@ uzun sayı grubunun uzunluğunu ekrana yazan c# programını yazınız.
 // Console.ReadKey();
 #endregion
 #region Dizi içerisinde dizi mevcut mu?
+/*
 int[] a = { 1, 4, 5, 6, 77, 88, 9 };
 int[] b = { 1, 4, 5, 6 };
 
@@ -390,6 +391,7 @@ static bool IceriyorMu(int[] Dizi, int[] altDizi)
 //   }
 //   return false;
 // }
+*/
 #endregion
 #region Integer Diziyi 1 Pozisyon Saga Kaydir
 //1,3,4,5,6

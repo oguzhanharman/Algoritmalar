@@ -8,13 +8,13 @@
     "name": "C#: algoritma-lab Debug",
     "type": "dotnet",
     "request": "launch",
-    "projectPath": "${workspaceFolder}/<relative-path-to-project-folder>algoritma-lab.csproj"
+    "projectPath": "${workspaceFolder}/algoritma-lab/algoritma-lab.csproj"
   },
     {
       "name": "C#: bitwise-agrlikli-sorular Debug",
       "type": "dotnet",
       "request": "launch",
-      "projectPath": "${workspaceFolder}/<relative-path-to-project-folder>bitwise-agrlikli-sorular.csproj"
+      "projectPath": "${workspaceFolder}/bitwise-agirlikli-sorular/bitwise-agirlikli-sorular.csproj"
     },
     {
       "name": ".NET Core Launch (console)",

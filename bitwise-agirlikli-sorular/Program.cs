@@ -357,19 +357,21 @@ else
 // maske --> 1111 0111 1111 1111 1111 1111 1111 1111 --> hex karş. 0xf7ffffff 28. bit 0 and yapılacak
 //------------------------------------------------------------------------------
 // 1024 e kadar sayıları binary ekrana bastıralım
-/*int[] bin = new int[11];
+/*int[] bin = new int[10]; // Dizinin boyutunu 10 olarak değiştirdik, çünkü 10 basamaklı en büyük binary sayı 1023'dür.
 int adt = 0;
-while (adt<1024)
+
+while (adt < 1024)
 {
-    adt++;
-    for (int i = 0; i < 10; i++)
+    for (int i = 9; i >= 0; i--) // Diziyi tersten yazdırmak için döngü sırasını değiştirdik.
     {
         Console.Write(bin[i]);
     }
     Console.WriteLine("");
+    adt++;
+
     bin[0]++;
     int lvl = 0;
-    while (bin[lvl]==2)
+    while (lvl < 9 && bin[lvl] == 2) // Döngünün sona ermesi için 'lvl < 9' koşulunu ekledik.
     {
         bin[lvl] = 0;
         lvl++;
@@ -383,10 +385,12 @@ while (adt<1024)
 // sağ shift sayının iki ile bölümüne eşittir
 //------------------------------------------------------------------------------
 // bir sayının binary karşılığında kaç adet bir var
-/*long a = 534534;
+/*
+long a = 534534;
 uint b = 1;
 int adt = 0;
 a = 0xffffffff;
+System.Console.WriteLine(a);
 for (int i = 0; i < 33; i++)
 {
     if ((a&b)!=0)
@@ -405,13 +409,15 @@ for (int i = 0; i < 33; i++)
     }
     a = a >> 1;
 }
-Console.WriteLine(adt);*/
+Console.WriteLine(adt);
+*/
 //------------------------------------------------------------------------------
 // verilen sayıyı binary sayıya çevirelim
 //int a = 345345433;
-//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------     ****** BURADA NE YAPILIYOR TAM ANLAMADIM BİR DAHA BAKACAĞIM
 // a=b mi ?
-/*long a = 0xf0f0f0f0;
+/*
+long a = 0xf0f0f0f0;
 long c = a;
 uint b = 0;
 for (int i = 0; i < 33; i++)
@@ -428,7 +434,8 @@ for (int i = 0; i < 33; i++)
     a = a >> 1;
 }
 Console.WriteLine(b);
-Console.WriteLine(c);*/
+Console.WriteLine(c);
+*/
 //------------------------------------------------------------------------------
 //25.03.2024
 // binary search
@@ -454,11 +461,11 @@ Console.WriteLine(c);*/
     }
     else if (x[indis]<data)
     {
-        return bsearch(x,indis+1,right,data) // indisi kontrol ettik o yüzden bir arttırdık
+        return bsearch(x,indis+1,right,data); // indisi kontrol ettik o yüzden bir arttırdık
     }
     else
     {
-        return bsearch(x,left,indis-1,data)
+        return bsearch(x,left,indis-1,data);
     }
 }
 int[] x = new int[1000];
@@ -488,9 +495,9 @@ for (int i = 1; i < 100000; i=i+2)
     f = f * -1;
 }*/
 //--------------------------------------------------------------------------------
-//LONGEST COMMON SUBSTRİNG
+// LONGEST COMMON SUBSTRING 
 
-/*string st1 = "zabz123zdefz67890az";
+string st1 = "zabz123zdefz67890az";
 string st2 = "xxabx123xxdefxxx67890a";
 int eb = 0;
 //1.ÇÖZÜM
@@ -502,7 +509,7 @@ for (int i = 0; i < st1.Length; i++)
     {
         if(st1[i+ind]==st2[j])
         {
-            if (i+ind >= st1.Length )
+            if (i + ind == st1.Length)  // <-- Düzeltilmiş koşul
             {
                 if (eb < adt )
                 {
@@ -525,7 +532,12 @@ for (int i = 0; i < st1.Length; i++)
     }
 }
 
+Console.WriteLine("Longest common substring length: " + eb);
+
+
+
 //2.ÇÖZÜM
+/*
 int[,] lcss = new int[st1.Length,st2.Length];
 for (int i = 0; i < st1.Length; i++)
 {
@@ -550,8 +562,10 @@ for (int i = 0; i < st1.Length; i++)
             eb = lcss[i,j];
         }
     }
-}*/
+}
+System.Console.WriteLine(eb);
 
+*/
 /*static void Lcss(lcss,int[,]x,string st1, string st2,int indis)
 {
     int i = indis / st1.Length;
