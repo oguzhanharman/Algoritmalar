@@ -87,9 +87,9 @@ static bool PalindromMu(string st)
 System.Console.WriteLine(PalindromMu("kazak"));
 #endregion
 #region 32bitlik sayıyı tersine cevirme
-
-uint a = 0x00001000;
-uint b = 0x80000000; //maske 010000000000
+/*
+uint a = 0x00001000;  //     0000 0000 0000 0000 0000 0000 0000 1000
+uint b = 0x80000000; //maske 0010 0000 0000 0000 0000 0000 0000 0000
 
 for (int i = 0; i < 32; i++)
 {
@@ -106,68 +106,73 @@ for (int i = 0; i < 32; i++)
 }
 
 Console.WriteLine(Convert.ToString(a, toBase: 2));
+*/
 
+//Aynı sorunun farklı çözümü
+/*
+uint a = 0x10000000; // 10000001 -> 10000001
+Console.WriteLine("A: " + Convert.ToString(a, toBase: 2));
+uint b = 0x00000001;
+uint c = 0x00000001;
+uint d = 0xfffffffe;//1111 111 .. 1111 1110 +1
+for (int i = 0; i < 32; i++)
+{
+  if ((a & b) != 0)
+  {
+    Console.WriteLine("A: " + Convert.ToString(a, toBase: 2));
+    Console.WriteLine("D: " + Convert.ToString(d, toBase: 2));
+    a = a & d;
+  }
 
-// //Aynı sorunun farklı çözümü
+  else a = a | c;
+  b = b << 1;
+  c = c << 1;
+  d = d << 1;
+  d++; //11101111111111111111111111111111
+}
 
-// uint a = 0x10000000;
-// uint b = 0x00000001;
-// uint c = 0x00000001;
-// uint d = 0xfffffffe;//11111111111100 +1
-// for (int i = 0; i < 32; i++)
-// {
-//   if ((a & b) != 0)
-//   {
-//     a = a & d;
-//   }
-
-//   else a = a | c;
-//   b = b << 1;
-//   c = c << 1;
-//   d = d << 1;
-//   d++;
-// }
-
-// Console.WriteLine(Convert.ToString(a, toBase: 2));
-
+Console.WriteLine("A: " + Convert.ToString(a, toBase: 2));
+*/
 #endregion
-#region a sayısını bye aktarma
-// uint a = 0x01001100;
-// uint b = 0x00000000;
-// uint c = 0x00000001;
+#region a sayısını b ye aktarma
+/*
+uint a = 0x01001100; //0000 0001 0000 0000 0001 0001 0000 0000
+                     //0000 0001 0000 0000 0001 0001 0000 0000
+uint c = 0x00000001; //maske
+uint b = 0x00000000;
 
-// for (int i = 0; i < 32; i++)
-// {
-//   if ((a & c) != 0)
-//   {
-//     b = b | c;
-//   }
-
-//   else b = b & c;
-//   c = c << 1;
-// }
-// Console.WriteLine(Convert.ToString(b, toBase: 2));
+for (int i = 0; i < 32; i++)
+{
+    if ((a & c) != 0)
+    {
+        b = b | c;
+    }
+    c = c << 1;
+}
+Console.WriteLine("B: " + Convert.ToString(b, 2));
+*/
 #endregion
 #region 32 bitlik sayının En yüksek seviyeli 5 bitini 1 artıralım
 // uint a = 0x00001811; //000010000000000=080001811
-// uint b = a & 0xfe000000; //00000000000000000xxxxx+1
+// uint b = a & 0xfe000000; //00000000000000000xxxxx+1  1111 1 110 0..00
 // b = b >> 27;
 // b = b + 1;
 // b = b << 27;//xxxxx0000000000000
+// Console.WriteLine("B: " +Convert.ToString(b, toBase: 2));
 // a = a | b;
 
 // Console.WriteLine(Convert.ToString(a, toBase: 2));
-// Console.ReadKey();
-
 
 // uint a = 0x10001811; //000010000000000=080001811
 // uint b = a & 0xf8000000; //00000000000000000xxxxx+1
 // b = b >> 27;
 // b = b + 1;
 // b = b << 27;//xxxxx0000000000000
+// Console.WriteLine("B: " +Convert.ToString(b, toBase: 2));
 // a = a | b;
 
 // Console.WriteLine(Convert.ToString(a, toBase: 2));
+
 #endregion
 #region 9 Pozisyon Sola Doğru Rotate
 //1000000001== 00800100
@@ -178,7 +183,7 @@ Console.WriteLine(Convert.ToString(a, toBase: 2));
 // {
 //   if ((a & b) != 0)
 //   {
-//     a <<= 1;
+//     a <<= 1; //a yı bir birim sola kaydır ve a ya ata
 //     a++; //a|1;
 //   }
 
@@ -193,7 +198,7 @@ Console.WriteLine(Convert.ToString(a, toBase: 2));
 
 // uint a = 0x10000000;
 // uint b = 0x80000000;
-// Console.WriteLine(Convert.ToString(a, toBase: 2));
+// Console.WriteLine("A: "+Convert.ToString(a, toBase: 2));
 // for (int i = 0; i < 9; i++)
 // {
 //   if ((a & b) != 0)
@@ -209,31 +214,32 @@ Console.WriteLine(Convert.ToString(a, toBase: 2));
 
 #endregion
 #region İlk 4 biti son 4 bite kopyalama
-//uint a = 0xABCD1234;
-//uint ilkDortlu = (a & 0xf0000000) >> 28 ;
-//a&=0xfffffff0;
-//uint sonuc=a|ilkDortlu;
-//Console.WriteLine(Convert.ToString(sonuc, toBase: 2));
+// uint a = 0xABCD1234;
+// uint ilkDortlu = (a & 0xf0000000) >> 28 ;
+// System.Console.WriteLine(" İlkDortlu: "+Convert.ToString(ilkDortlu,toBase:2));
+// a&=0xfffffff0;
+// uint sonuc=a|ilkDortlu;
+// Console.WriteLine(Convert.ToString(sonuc, toBase: 2));
 
 
 
-//uint esasSayi = 0xABCD1234;
-//uint ilkDortlu = esasSayi & 0xf0000000;
-//uint sonuc=0;
-//ilkDortlu >>= 28;//xxxx000000000 //00000xxxx
-//esasSayi=esasSayi&0xfffffff0;
-//sonuc |= esasSayi | ilkDortlu;
-//Console.WriteLine(Convert.ToString(sonuc,toBase:2));
+// uint esasSayi = 0xABCD1234;
+// uint ilkDortlu = esasSayi & 0xf0000000;
+// uint sonuc=0;
+// ilkDortlu >>= 28;//xxxx000000000 -> //00000xxxx
+// esasSayi=esasSayi&0xfffffff0;
+// sonuc |= esasSayi | ilkDortlu;
+// Console.WriteLine(Convert.ToString(sonuc,toBase:2));
 
 
 
-//uint esasSayi = 0xABCD1234; // 32 bitlik orijinal sayı
-//Console.WriteLine(Convert.ToString(esasSayi, toBase: 2));
-//uint ilkDortlu = esasSayi & 0xF0000000; // İlk dört biti maskeleme
-//uint sonuc = ilkDortlu >> 28; // Son dört bitine kaydırma
-//sonuc |= esasSayi & 0xFFFFFFF0; // Orijinal sayının son 28 bitini kopyalama
+uint esasSayi = 0xABCD1234; // 32 bitlik orijinal sayı
+Console.WriteLine(Convert.ToString(esasSayi, toBase: 2));
+uint ilkDortlu = esasSayi & 0xF0000000; // İlk dört biti maskeleme
+uint sonuc = ilkDortlu >> 28; // Son dört bitine kaydırma
+sonuc |= esasSayi & 0xFFFFFFF0; // Orijinal sayının son 28 bitini kopyalama
 
-//Console.WriteLine(Convert.ToString(sonuc, toBase: 2));
+Console.WriteLine(Convert.ToString(sonuc, toBase: 2));
 #endregion
 #region 32 bitlik sayının En yüksek seviyeli 5 bitini 1 artıralım
 // uint a = 0x00080080;
@@ -245,7 +251,7 @@ Console.WriteLine(Convert.ToString(a, toBase: 2));
 // a = a | b;
 // Console.WriteLine(Convert.ToString(a, toBase: 2));
 #endregion
-#region uzun bir soru içeride yazıyor
+#region içeride uzun bir soru yazıyor
 /*Soru
 A1 ve A2 32’şer bitlik unsigned integer sayılardır.
 Bu ikisi 64 bitlik bir sayıyı oluşturmaktadır. A1,

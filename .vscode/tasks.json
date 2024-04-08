@@ -7,7 +7,7 @@
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/bitwise-agirlikli-sorular/bitwise-agirlikli-sorular.csproj",
+        "${workspaceFolder}/algoritma-lab/algoritma-lab.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary;ForceNoAlign"
       ],
@@ -19,7 +19,7 @@
       "type": "process",
       "args": [
         "publish",
-        "${workspaceFolder}/bitwise-agirlikli-sorular/bitwise-agirlikli-sorular.csproj",
+        "${workspaceFolder}/algoritma-lab/algoritma-lab.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary;ForceNoAlign"
       ],
@@ -33,7 +33,7 @@
         "watch",
         "run",
         "--project",
-        "${workspaceFolder}/bitwise-agirlikli-sorular/bitwise-agirlikli-sorular.csproj"
+        "${workspaceFolder}/algoritma-lab/algoritma-lab.csproj"
       ],
       "problemMatcher": "$msCompile"
     }
