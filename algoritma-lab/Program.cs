@@ -613,10 +613,3 @@ static void enUzunAritmetikDizi(int[] arr)
 
 
 
-
-
-
-
-
-
-
