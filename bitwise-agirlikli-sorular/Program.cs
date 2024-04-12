@@ -496,7 +496,7 @@ for (int i = 1; i < 100000; i=i+2)
 }*/
 //--------------------------------------------------------------------------------
 // LONGEST COMMON SUBSTRING 
-
+/*
 string st1 = "zabz123zdefz67890az";
 string st2 = "xxabx123xxdefxxx67890a";
 int eb = 0;
@@ -533,7 +533,7 @@ for (int i = 0; i < st1.Length; i++)
 }
 
 Console.WriteLine("Longest common substring length: " + eb);
-
+*/
 
 
 //2.ÇÖZÜM

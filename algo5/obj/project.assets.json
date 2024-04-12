@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/sevketugurel/Desktop/algo5/algo5.csproj",
+      "projectUniqueName": "/Users/sevketugurel/Desktop/Algoritmalar/algo5/algo5.csproj",
       "projectName": "algo5",
-      "projectPath": "/Users/sevketugurel/Desktop/algo5/algo5.csproj",
+      "projectPath": "/Users/sevketugurel/Desktop/Algoritmalar/algo5/algo5.csproj",
       "packagesPath": "/Users/sevketugurel/.nuget/packages/",
-      "outputPath": "/Users/sevketugurel/Desktop/algo5/obj/",
+      "outputPath": "/Users/sevketugurel/Desktop/Algoritmalar/algo5/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/sevketugurel/.nuget/NuGet/NuGet.Config"

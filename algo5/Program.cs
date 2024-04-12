@@ -1,88 +1,89 @@
-﻿int[] numbers = { 2,3,6, 9, 12, 15 };
-longstCommonAritmetic(numbers);return;
-Console.WriteLine("Orjinal Dizi:");
-PrintArray(numbers);
+﻿#region 
+// int[] numbers = { 2,3,6, 9, 12, 15 };
+// longstCommonAritmetic(numbers);return;
+// Console.WriteLine("Orjinal Dizi:");
+// PrintArray(numbers);
 
-int n = 11;
-ShiftArrayRight(numbers, n);
+// int n = 11;
+// ShiftArrayRight(numbers, n);
 
-Console.WriteLine($"\nSağa Kaydırılmış :");
-PrintArray(numbers);
+// Console.WriteLine($"\nSağa Kaydırılmış :");
+// PrintArray(numbers);
 
-#region N birim sağa kaydırma
-static void ShiftArrayRight(int[] array, int n)
-{
-  int length = array.Length;
+// #region N birim sağa kaydırma
+// static void ShiftArrayRight(int[] array, int n)
+// {
+//   int length = array.Length;
 
-  int[] temp = new int[length];
+//   int[] temp = new int[length];
 
-  for (int i = 0; i < length; i++)
-  {
-    temp[(i + n) % length] = array[i];
-  }
+//   for (int i = 0; i < length; i++)
+//   {
+//     temp[(i + n) % length] = array[i];
+//   }
 
-  for (int i = 0; i < length; i++)
-  {
-    array[i] = temp[i];
-  }
-}
+//   for (int i = 0; i < length; i++)
+//   {
+//     array[i] = temp[i];
+//   }
+// }
 
 
-static void PrintArray(int[] array)
-{
-  foreach (var item in array)
-  {
-    Console.Write(item + " ");
-  }
-  Console.WriteLine();
-}
+// static void PrintArray(int[] array)
+// {
+//   foreach (var item in array)
+//   {
+//     Console.Write(item + " ");
+//   }
+//   Console.WriteLine();
+// }
 #endregion
 
 #region aritmik kontrolü
-static bool aritmikMi(int[] dizi)
-{
-  bool aritmetik = false;
-  if (dizi.Length < 3) return aritmetik;
-  int kural = dizi[1] - dizi[0];
-  for (int i = 2; i < dizi.Length - 1; i++)
-  {
-    int temp = dizi[i + 1] - dizi[i];
-    if (temp != kural) return aritmetik;
-  }
+// static bool aritmikMi(int[] dizi)
+// {
+//   bool aritmetik = false;
+//   if (dizi.Length < 3) return aritmetik;
+//   int kural = dizi[1] - dizi[0];
+//   for (int i = 2; i < dizi.Length - 1; i++)
+//   {
+//     int temp = dizi[i + 1] - dizi[i];
+//     if (temp != kural) return aritmetik;
+//   }
 
-  return !aritmetik;
-}
+//   return !aritmetik;
+// }
 #endregion
 
 #region parametre olarak alınan bir dizideki en uzun aritmetik diziyi ekrana bas ---> güzel bir soruymuş anla
-static void longstCommonAritmetic(int[] dizi)
-{
-  int[] newdizi = new int[dizi.Length];
-  int sayac = 0;
-  int maxsayac = sayac;
-  int k = 0;
-  for (int i = 0; i < dizi.Length - 1; i++)
-  {
-    int kural = dizi[i + 1] - dizi[i];
-    for (int j = i; j < dizi.Length - 1; j++)
-    {
-      if (sayac > maxsayac)
-      {
-        if (dizi[j + 1] - dizi[j] == kural) newdizi[k] = dizi[j]; k++; sayac++;
-      }else{
-        k = 0;
-        sayac =0;
-        break;
-      }
-    }
-  }
-  PrintArray(newdizi);
-}
+// static void longstCommonAritmetic(int[] dizi)
+// {
+//   int[] newdizi = new int[dizi.Length];
+//   int sayac = 0;
+//   int maxsayac = sayac;
+//   int k = 0;
+//   for (int i = 0; i < dizi.Length - 1; i++)
+//   {
+//     int kural = dizi[i + 1] - dizi[i];
+//     for (int j = i; j < dizi.Length - 1; j++)
+//     {
+//       if (sayac > maxsayac)
+//       {
+//         if (dizi[j + 1] - dizi[j] == kural) newdizi[k] = dizi[j]; k++; sayac++;
+//       }else{
+//         k = 0;
+//         sayac =0;
+//         break;
+//       }
+//     }
+//   }
+//   PrintArray(newdizi);
+// }
 
 #endregion
 
 
-#region atilla hocanın çözdükleri
+#region ATİLLA HOCANIN ÇÖZDÜKLERİ
 // 04.03.2024
 // 5 basamaklı sayılardan 10000..99999 rakamları toplamı 25 olan kaç adet sayı vardır ?
 //1.çözüm
@@ -296,11 +297,12 @@ else
 // !=0
 /*if ((a & 0x80000000)!=0x80000000)
 {
-    Console.WriteLine("pozitif");
+    Console.WriteLine("negatif");
 }
 else
 {
-    Console.WriteLine("negatif");
+    Console.WriteLine("pozitif");
+
 }*/
 //-----------------------------------------------------------------------------
 // 3. biti 1 yapalım diğer bitlere dokunulmayacak
@@ -334,25 +336,27 @@ else
 // maske --> 1111 0111 1111 1111 1111 1111 1111 1111 --> hex karş. 0xf7ffffff 28. bit 0 and yapılacak
 //------------------------------------------------------------------------------
 // 1024 e kadar sayıları binary ekrana bastıralım
-/*int[] bin = new int[11];
-int adt = 0;
-while (adt<1024)
-{
-    adt++;
-    for (int i = 0; i < 10; i++)
-    {
-        Console.Write(bin[i]);
-    }
-    Console.WriteLine("");
-    bin[0]++;
-    int lvl = 0;
-    while (bin[lvl]==2)
-    {
-        bin[lvl] = 0;
-        lvl++;
-        bin[lvl]++;
-    }
-}*/
+// int[] bin = new int[10]; // Dizinin boyutunu 10 olarak değiştirdik, çünkü 10 basamaklı en büyük binary sayı 1023'dür.
+// int adt = 0;
+
+// while (adt < 1024)
+// {
+//     for (int i = 9; i >= 0; i--) // Diziyi tersten yazdırmak için döngü sırasını değiştirdik.
+//     {
+//         Console.Write(bin[i]);
+//     }
+//     Console.WriteLine("");
+//     adt++;
+
+//     bin[0]++;
+//     int lvl = 0;
+//     while (lvl < 9 && bin[lvl] == 2) // Döngünün sona ermesi için 'lvl < 9' koşulunu ekledik.
+//     {
+//         bin[lvl] = 0;
+//         lvl++;
+//         bin[lvl]++;
+//     }
+// }
 //------------------------------------------------------------------------------
 // shift kaydırma
 //  (>>) sağa shift (<<) sola shift
@@ -360,29 +364,30 @@ while (adt<1024)
 // sağ shift sayının iki ile bölümüne eşittir
 //------------------------------------------------------------------------------
 // bir sayının binary karşılığında kaç adet bir var
-/*long a = 534534;
-uint b = 1;
-int adt = 0;
-a = 0xffffffff;
-for (int i = 0; i < 33; i++)
-{
-    if ((a&b)!=0)
-    {
-        adt++;  
-    }
-    b = b << 1;
-}
 
-// 2. çözüm
-for (int i = 0; i < 33; i++)
-{
-    if ((a & 1) == 1)
-    {
-        adt++;
-    }
-    a = a >> 1;
-}
-Console.WriteLine(adt);*/
+// long a = 534534;
+// uint b = 1;
+// int adt = 0;
+// a = 0xffffffff;
+// for (int i = 0; i < 33; i++)
+// {
+//     if ((a&b)!=0)
+//     {
+//         adt++;  
+//     }
+//     b = b << 1;
+// }
+
+// // 2. çözüm
+// for (int i = 0; i < 33; i++)
+// {
+//     if ((a & 1) == 1)
+//     {
+//         adt++;
+//     }
+//     a = a >> 1;
+// }
+// Console.WriteLine(adt);
 //------------------------------------------------------------------------------
 // verilen sayıyı binary sayıya çevirelim
 //int a = 345345433;
