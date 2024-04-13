@@ -609,7 +609,23 @@ static void NPozisyon(int[] x, int n)
 
 // }
 #endregion
+#region Simayın sorusu
+//peki ya 128 değilde 256,512,1024 bitlik bir sayı deseydik ne yapacaktık?
+// bunun çözümü sayı kaç bitlik olursa olsun otomatik çözüm üretmek
+// bence aşağıdaki çözüm baya
+uint[] X = { 1, 2, 3, 4, 5, 6 };
+uint a = 0;
+uint h = X[a];
+X[a]++;
+while (h > X[a])
+{
+  a++;
+  h = X[a];
+  X[a]++;
 
+}
+
+#endregion
 
 
 

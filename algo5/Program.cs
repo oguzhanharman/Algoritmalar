@@ -82,7 +82,6 @@
 
 #endregion
 
-
 #region ATİLLA HOCANIN ÇÖZDÜKLERİ
 // 04.03.2024
 // 5 basamaklı sayılardan 10000..99999 rakamları toplamı 25 olan kaç adet sayı vardır ?
@@ -571,3 +570,4 @@ for (int i = 0; i < st1.Length; i++)
 
 Console.Read();
 #endregion
+
