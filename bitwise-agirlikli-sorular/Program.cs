@@ -496,44 +496,64 @@ for (int i = 1; i < 100000; i=i+2)
 }*/
 //--------------------------------------------------------------------------------
 // LONGEST COMMON SUBSTRING 
-/*
-string st1 = "zabz123zdefz67890az";
-string st2 = "xxabx123xxdefxxx67890a";
-int eb = 0;
-//1.ÇÖZÜM
-for (int i = 0; i < st1.Length; i++)
-{
-    int ind = 0;
-    int adt = 0;
-    for (int j = 0; j < st2.Length; j++)    
-    {
-        if(st1[i+ind]==st2[j])
-        {
-            if (i + ind == st1.Length)  // <-- Düzeltilmiş koşul
-            {
-                if (eb < adt )
-                {
-                    eb =adt;
-                }
-                break;
-            }
-            ind++;
-            adt++;
-        }else
-        {
-            ind =0;
-            if (eb<adt)
-            {
-                eb = adt;
-                adt=0;
-            }
 
-        }
-    }
-}
+// string st1 = "zabz123zdefz67890az";
+// string st2 = "xxabx123xxdefxxx6790a";
+// int eb = 0;
+// //1.ÇÖZÜM
 
-Console.WriteLine("Longest common substring length: " + eb);
-*/
+// for (int i = 0; i < st1.Length; i++)
+// {
+//     int ind = 0;
+//     int adt = 0;
+//     for (int j = 0; j < st2.Length && i + ind < st1.Length; j++)
+//     {
+//         if (st1[i + ind] == st2[j])
+//         {
+//             ind++;
+//             adt++;
+//         }
+//         else
+//         {
+//             ind = 0;
+//             if (eb < adt)
+//             {
+//                 eb = adt;
+//             }
+//             adt = 0;
+//         }
+//     }
+//     if (eb < adt)
+//     {
+//         eb = adt;
+//     }
+// }
+
+
+// Console.WriteLine("Longest common substring length: " + eb);
+
+
+
+// string s1 = "abadeghıjklm";
+// string s2 = "absıaklm";
+// int[,] lcs = new int[s1.Length, s2.Length];
+// int eblcs = 0;
+// for (int i = 0; i < s1.Length; i++)
+// {
+//     for (int j = 0; j < s2.Length; j++)
+//     {
+//         if (s1[i] == s2[j])
+//         {
+//             if (i == 0 || j == 0) { lcs[i, j] = 1; }
+//             else { lcs[i, j] = lcs[i - 1, j - 1] + 1; }
+//             if (eblcs < lcs[i, j]) { eblcs = lcs[i, j]; }
+//         }
+
+
+//     }
+
+// }
+// System.Console.WriteLine("Longest common substring length 'eblcs': " +eblcs);
 
 
 //2.ÇÖZÜM

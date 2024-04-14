@@ -408,32 +408,33 @@ uzun sayı grubunun uzunluğunu ekrana yazan c# programını yazınız.
 //1,3,4,5,6
 //6,1,3,4,5
 
-static void BirSagaKaydir(int[] x)
-{
-  int diziB = x.Length;
-  int sonEl = x[diziB - 1];
-  for (int i = diziB - 1; i >= 1; i--)
-  {
-    x[i] = x[i - 1];
-  }
 
-  x[0] = sonEl;
+// static void BirSagaKaydir(int[] x)
+// {
+//   int diziB = x.Length;
+//   int sonEl = x[diziB - 1];
+//   for (int i = diziB - 1; i >= 1; i--)
+//   {
+//     x[i] = x[i - 1];
+//   }
+
+//   x[0] = sonEl;
 
 
-}
-//Diziyi n pozisyon sağa kaydıran metod
+// }
+// //Diziyi n pozisyon sağa kaydıran metod
 
-static void NPozisyon(int[] x, int n)
-{
-  int diziUzunluk = x.Length;
-  if (n % diziUzunluk != 0)// tam bölündüğünde  zaten başa dönmüş oluyor
-  {
-    for (int i = 0; i < n; i++)
-    {
-      BirSagaKaydir(x);
-    }
-  }
-}
+// static void NPozisyon(int[] x, int n)
+// {
+//   int diziUzunluk = x.Length;
+//   if (n % diziUzunluk != 0)// tam bölündüğünde  zaten başa dönmüş oluyor
+//   {
+//     for (int i = 0; i < n; i++)
+//     {
+//       BirSagaKaydir(x);
+//     }
+//   }
+// }
 
 #endregion
 #region Aritmetik Dizi Kontrolü
@@ -609,24 +610,45 @@ static void NPozisyon(int[] x, int n)
 
 // }
 #endregion
-#region Simayın sorusu
+#region Şimayla çözdüklerimiz
 //peki ya 128 değilde 256,512,1024 bitlik bir sayı deseydik ne yapacaktık?
 // bunun çözümü sayı kaç bitlik olursa olsun otomatik çözüm üretmek
 // bence aşağıdaki çözüm baya
-uint[] X = { 1, 2, 3, 4, 5, 6 };
-uint a = 0;
-uint h = X[a];
-X[a]++;
-while (h > X[a])
-{
-  a++;
-  h = X[a];
-  X[a]++;
+// uint[] X = { 1, 2, 3, 4, 5, 6 };
+// uint a = 0;
+// uint h = X[a];
+// X[a]++;
+// while (h > X[a])
+// {
+//   a++;
+//   h = X[a];
+//   X[a]++;
 
-}
+// }
+// --------------------------------------------------------------------------------------------------------------------------------------------
+// uint[] X = new uint[4] { 0x80000000, 0x10000000, 0x20000000, 0x30000000 }; // X dizisini farklı değerlerle başlatılmış
+// ulong sonuc = 0;
+
+// for (int i = 0; i < X.Length; i++)
+// {
+//   sonuc <<= 32; // Sonucu 32 bit sola kaydır
+//   System.Console.WriteLine(Convert.ToString((long)sonuc, 2));
+//   sonuc |= X[i]; // Sonuca X dizisinin i. elemanını ekle
+//   System.Console.WriteLine(Convert.ToString((long)sonuc, 2));
+// }
+// string binaryString = Convert.ToString((long)sonuc, 2);
+// string binaryString2 = Convert.ToString((long)0x30000000, 2);
+
+// Console.WriteLine(binaryString);
+// Console.WriteLine(binaryString2);
+
+
+// #endregion
+// #region 2023 sınav sorusu
+
+--------------------------------------------------------------------------------------------------------------------------------------------
 
 #endregion
-
 
 
 
