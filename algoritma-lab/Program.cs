@@ -645,8 +645,114 @@ uzun sayı grubunun uzunluğunu ekrana yazan c# programını yazınız.
 
 // #endregion
 // #region 2023 sınav sorusu
-
+/*
 --------------------------------------------------------------------------------------------------------------------------------------------
+
+2 adet uint tipinden değişkenler yanyana olsun 
+yani 
+            uint a1 = 0x00000000;
+            uint a2 = 0x0000ffff;
+bunlardan 64 bit olur
+en fazla yanyana 1 lerin sayısını recursive metodunu
+*/
+// uint[] X = new uint[4] { 0x80000000, 0x10000000, 0x20000000, 0x30000000 }; // X dizisini farklı değerlerle başlatılmış
+// ulong sonuc = 0;
+
+// for (int i = 0; i < X.Length; i++)
+// {
+//   sonuc <<= 32; // Sonucu 32 bit sola kaydır
+//   sonuc |= X[i]; // Sonuca X dizisinin i. elemanını ekle
+// }
+// string binaryString = ConvertToBinary(sonuc);
+// Console.WriteLine(binaryString);
+
+// static string ConvertToBinary(ulong number)
+// {
+//   const int bits = 128;
+//   char[] binary = new char[bits];
+//   for (int i = bits - 1; i >= 0; i--)
+//   {
+//     binary[i] = ((number & 1) == 1) ? '1' : '0';
+//     number >>= 1;
+//   }
+//   return new string(binary);
+// }
+
+
+// static int enuzunBirler(ulong X, int max, int adet)
+// {
+//   if (X == 0) return max;
+
+//   if ((X & 1) != 0)
+//   {
+//     adet++;
+//     if (adet > max) max = adet;
+//   }
+//   else
+//   {
+//     adet = 0;
+//   }
+
+//   return enuzunBirler(X >> 1, max, adet);
+// }
+
+// ulong a = 0x10;
+// ulong b = 0;
+// ulong sonuc = (a << 32) | b;
+
+// System.Console.WriteLine(enuzunBirler(sonuc, 0, 0));
+
+// --------------------------------------------------------------------------------------------------------------------------------------------
+
+// bir dizinin tüm alt kümlerini yazan script
+
+// int[] x = { 1, 2, 3, 8, 5 };
+// uint b = 1;
+// for (int i = 0; i < 32; i++)
+// {
+//   b = 1;
+//   for (int j = 0; j < 5; j++)
+//   {
+//     if ((i & b) != 0)
+//     {
+//       Console.Write(x[j]);
+//     }
+//     b = b << 1;
+//   }
+//   Console.WriteLine();
+// }
+
+// RECURSİVE
+
+// int[] x = { 1, 2, 3, 8, 5 };
+// FindSubsets(x, 0, new int[x.Length], 0);
+
+// static void FindSubsets(int[] x, int index, int[] subset, int subsetIndex)
+// {
+//   if (index == x.Length)
+//   {
+//     // Subset'i yazdır
+//     Console.Write("{ ");
+//     for (int i = 0; i < subsetIndex; i++)
+//     {
+//       Console.Write(subset[i] + " ");
+//     }
+//     Console.WriteLine("}");
+//     return;
+//   }
+
+//   // Elemanı eklememe durumu
+//   FindSubsets(x, index + 1, subset, subsetIndex);
+
+//   // Elemanı ekleyerek devam etme durumu
+//   subset[subsetIndex] = x[index];
+//   FindSubsets(x, index + 1, subset, subsetIndex + 1);
+// }
+
+
+
+// int[] a = { 1, 2, 3, 8, 5 };
+// FindSubsets(a, 0, new int[a.Length], 0);
 
 #endregion
 
