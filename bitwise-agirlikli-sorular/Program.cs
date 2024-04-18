@@ -3,40 +3,42 @@
 // 5 basamaklı sayılardan 10000..99999 rakamları toplamı 25 olan kaç adet sayı vardır ?
 //1.çözüm
 
-/*
-int abc1 = 0;
-for (int i = 10000; i < 100000; i++)
-{
-    // 10000
-    int c = 0;
-    int b = i;
-    while (b!=0)
-    {
-        c = c + b - (b / 10) * 10;
-        b = b / 10;
-    }
-    if (c == 25) abc1++;
-}
-System.Console.WriteLine(abc1);
-//2.çözüm
-int abc = 0;
-for (int i = 1; i < 10; i++)
-{
-    for (int j = 0; j < 10; j++)
-    {
-        for (int k = 0; k < 10; k++)
-        {
-            for (int m = 0; m < 10; m++)
-            {
-                for (int n = 0; n < 10; n++)
-                {
-                    if (i + j + k + m + n == 25) abc++;
-                }
-            }
-        }
-    }
-}
-*/
+
+// int abc1 = 0;
+// for (int i = 10000; i < 100000; i++)
+// {
+//     // 10000
+//     int c = 0;
+//     int b = i;
+//     while (b!=0)
+//     {
+//         c = c + b - (b / 10) * 10;              // 12380
+//         b = b / 10;
+//     }
+//     if (c == 25) abc1++;
+// }
+// System.Console.WriteLine(abc1);
+
+
+// //2.çözüm
+// int abc = 0;
+// for (int i = 1; i < 10; i++)
+// {
+//     for (int j = 0; j < 10; j++)
+//     {
+//         for (int k = 0; k < 10; k++)
+//         {
+//             for (int m = 0; m < 10; m++)
+//             {
+//                 for (int n = 0; n < 10; n++)
+//                 {
+//                     if (i + j + k + m + n == 25) abc++;
+//                 }
+//             }
+//         }
+//     }
+// }
+
 
 //-----------------------------------------------------------------------------
 // 0 dan 8 e kadar olan sayıların binary karşılıklarını yazalım
@@ -46,19 +48,19 @@ for (int i = 1; i < 10; i++)
 //00011 3
 //00100 4
 
-/*for (int k = 0; k < 2; k++)
-{
-    for (int j = 0; j < 2; j++)
-    {
-        for (int i = 0; i < 2; i++)
-        {
-            Console.Write(k);
-            Console.Write(j);
-            Console.Write(i);
-            Console.WriteLine();
-        }
-    }
-}*/
+// for (int k = 0; k < 2; k++)
+// {
+//     for (int j = 0; j < 2; j++)
+//     {
+//         for (int i = 0; i < 2; i++)
+//         {
+//             Console.Write(k); // msb --> lsb gidiyor
+//             Console.Write(j);
+//             Console.Write(i);
+//             Console.WriteLine();
+//         }
+//     }
+// }
 //------------------------------------------------------------------------------
 // ÖDEV!! 20 basamaklı tüm binary sayıları yazdır
 
@@ -71,23 +73,22 @@ for (int i = 1; i < 10; i++)
 
 //------------------------------------------------------------------------------
 // 123 -->  "123"  int sayıyı string yapma
-/*
-int b = 123;
-string st = "";
-int c = 0;
 
-while (b != 0)
-{
-    c = b - (b / 10) * 10;                                        // ----> bu özelliğe takitiğe daha sonra da bakacağım
-    b = b / 10;
-    st = (char)((byte)'0'+c)+st;
-}
-// 0  21
-// 1  22
-// 2  23
-// 3  24
-Console.WriteLine(st);
-*/
+// int b = 123;
+// string st = "";
+// int c = 0;
+
+// while (b != 0)
+// {
+//     c = b - (b / 10) * 10; // mod                                        // ----> bu özelliğe takitiğe daha sonra da bakacağım
+//     b = b / 10;
+//     st = (char)((byte)'0'+c)+st;
+// }
+// // 0  21
+// // 1  22
+// // 2  23
+// // 3  24
+// Console.WriteLine(st);
 //------------------------------------------------------------------------------
 // string sayıyı int çevirme "123" --> 123
 /*
@@ -122,139 +123,140 @@ for (int i = 0; i < st.Length; i++)
 Console.WriteLine(a);*/
 //------------------------------------------------------------------------------
 // ÖDEV!! verilen string te en uzun palindromik stringi bulan kod parçacığı
-//string str = "asdmmsnjnsdksmakd";
-/*
-static bool PalindromikMi(string st, int alt, int ust)
-{
+// string str = "asdmmsnjnsdksmakd";
 
-  int flag = 1;
-  while (alt <= ust)
-  {
-    if (st[alt] != st[ust])
-    {
-      flag = 0;
-      break;
+// static bool PalindromikMi(string st, int alt, int ust)
+// {
+//   while (alt <= ust)
+//   {
+//     if (st[alt] != st[ust])
+//     {
+//       return false;
+//     }
+//     alt++;
+//     ust--;
+//   }
+//   return true
 
-    }
-    alt++;
-    ust--;
-  }
+// }
 
-  if (flag == 1)
-  {
-    return true;
-  }
-  else return false;
+// static string EnUzunPalindrom(string st)
+// {
 
-}
+//   int alt = 0, ust = 0, max = 0, anlıkMax = 0;
+//   for (int i = 0; i < st.Length; i++)
+//   {
+//     for (int j = st.Length - 1; j >= i; j--)
+//     {
 
-static string EnUzunPalindrom(string st)
-{
+//       if (st[i] == st[j])
+//       {
+//         if (PalindromikMi(st, i, j))            //as xlmd dmlx ksmakd
+//         {
+//           anlıkMax = j - i + 1;
+//           if (max < anlıkMax)
+//           {
+//             max = anlıkMax;
+//             alt = i;
+//             ust = j;
+//           }
+//         }
+//       }
 
-  int alt = 0, ust = 0, max = 0, zincir = 0;
-  for (int i = 0; i < st.Length; i++)
-  {
-    for (int j = st.Length - 1; j >= 0; j--)
-    {
+//     }
+//   }
+//   string st2 = "";
+//   for (int i = alt; i <= ust; i++)
+//   {
+//     st2 += st[i];
+//   }
 
-      if (st[i] == st[j])
-      {
-        if (PalindromikMi(st, i, j))
-        {
-          zincir = j - i + 1;
-          if (max < zincir)
-          {
-            max = zincir;
-            alt = i;
-            ust = j;
-          }
-        }
-      }
+//   return st2;
 
-    }
-  }
-  string st2 = "";
-  for (int i = alt; i <= ust; i++)
-  {
-    st2 += st[i];
-  }
+// }
 
-  return st2;
-
-}
-
-*/
 
 
 //------------------------------------------------------------------------------
-// verilen 101011101 şeklinde verilen stringi 10 luk sayıya çeviren kod parçacığı
-/*string st = "1111010101010101";
-int sayi = 0;
-int basDeger = 1;
-for (int i = st.Length-1; i >= 0; i--)
-{
-    sayi = sayi + basDeger * (st[i] - '0');
-    basDeger *= 2;
-}
-Console.WriteLine(sayi);*/
+// verilen 101011101 şeklinde verilen stringi 10 luk sayıya çeviren kod parçacığı  ****
+// string st = "1111010101010101";
+// int sayi = 0;
+// int basDeger = 1;
+// for (int i = st.Length-1; i >= 0; i--)
+// {
+//     sayi = sayi + basDeger * (st[i] - (byte)'0');
+//     basDeger *= 2;
+// }
+// Console.WriteLine(sayi);
 //------------------------------------------------------------------------------
 // verilen iki dizinin ortak eleman sayısını bulalım 
-/*int[] x = { 3, 45, 67, 66, 2, 6, 48, 71, 78,98 };
-int[] y = { 13, 45, 67, 166, 2, 16, 48, 71, 178, 198 };
-int[] z = new int[200];
-//çözüm 1
-int sayi = 0;
-for (int i = 0; i < x.Length; i++)
-{
-    for (int j = 0; j < y.Length; j++)
-    {
-        if (x[i] == y[j])
-        {
-            sayi++;
-        }
-    }
-}
-Console.WriteLine(sayi);
-//çözüm 2
-sayi = 0;
-for (int i = 0; i < x.Length; i++)
-{
-    z[x[i]]++;
-}
-for (int i = 0; i < y.Length; i++)
-{
-    if (z[y[i]] == 1)
-    {
-        sayi++;
-    }
-}
-Console.WriteLine(sayi);*/
+// int[] x = { 3, 45, 67, 66, 2, 6, 48, 71, 78,98 };
+// int[] y = { 13, 45, 67, 166, 2, 16, 48, 71, 178, 198 };
+// int[] z = new int[200];
+// //çözüm 1
+// int sayi = 0;
+// for (int i = 0; i < x.Length; i++)
+// {
+//     for (int j = 0; j < y.Length; j++)
+//     {
+//         if (x[i] == y[j])
+//         {
+//             sayi++;
+//         }
+//     }
+// }
+// Console.WriteLine(sayi);
+// //çözüm 2
+
+// sayi = 0;
+// for (int i = 0; i < x.Length; i++)
+// {
+//     z[x[i]]++;
+// }
+// for (int i = 0; i < y.Length; i++)
+// {
+//     if (z[y[i]] == 1)
+//     {
+//         sayi++;
+//     }
+// }
+// Console.WriteLine(sayi);
 //------------------------------------------------------------------------------
-// ÖDEV!! verilen iki  dizideki her elemanı çarpıp çarpılan sayıların indexine çarpım sonucu yazan yeni diziye yazan kod 
-//int[] x = { 1, 3, 5, 8, 9, 0, 0, 1, 2 };
-//int[] y = { 7, 7, 4, 5, 6, 7, 8, 0, 0 };
-/*
-static int[] carpımlarDizisi(int[] x, int[] y)
-{
-    int[] z = new int[x.Length + 2];
-    int sonuc = 0;
-    int elde = 0;
-    for (int i = x.Length - 1; i >= 0; i--)
-    {
-        sonuc = x[i] * y[i] + elde;
-        if (sonuc < 10)
-        {
-            z[i] = sonuc;
-            elde = 0;
-        }
-        else
-        {
-            z[i] = sonuc % 10;
-            elde = sonuc / 10;
-        }
-    }
-    return z;
-}*/
+// ÖDEV!! verilen iki  dizideki her elemanı çarpıp çarpılan sayıların indexine çarpım sonucu yazan yeni diziye yazan kod  ----> sınV SORUSU
+// int[] x = { 1, 3, 5 };
+// int[] y = { 7, 7, 5 }; // Ensure y has the same length as x
+
+// static int[] carpimlarDizisi(int[] x, int[] y)
+// {
+//     int[] z = new int[x.Length + 1];
+
+//     int sonuc = 0;
+//     int elde = 0;
+//     for (int i = x.Length - 1; i >= 0; i--)
+//     {
+//         sonuc = x[i] * y[i] + elde;
+//         if (sonuc < 10)
+//         {
+//             z[i + 1] = sonuc;
+//             elde = 0;
+//         }
+//         else
+//         {
+//             z[i + 1] = sonuc % 10;
+//             elde = sonuc / 10;
+//         }
+//     }
+
+//     z[0] = elde; // Eldeyi en başa ekle
+//     return z;
+// }
+
+
+// foreach (var item in carpimlarDizisi(x, y))
+// {
+//     System.Console.WriteLine(item);
+// }
+
 
 //------------------------------------------------------------------------------
 // bitwise bitsel işlemler
@@ -268,27 +270,27 @@ static int[] carpımlarDizisi(int[] x, int[] y)
 // 2tohex
 // 0X hex sayı demek
 
-/*
-int a = 0x40000000;
-Console.WriteLine(a);
-a = a << 1;
-uint u = 0x80000000;
-u = 0xa;
-Console.WriteLine("u " + u);
-u = u & 40000000;
-Console.WriteLine("u "+ u);
-u = u | 40000000;
-Console.WriteLine("u " + u);
-Console.WriteLine(a);
 
-if((u & 0x1) == 1)
-{
-    Console.WriteLine("u tektir");
-}
-else
-{
-    Console.WriteLine("u çifttir");
-}*/
+// int a = 0x42000f00;                     // 1000 0010 0000 0000 0000 1111 0000 0000 
+// Console.WriteLine(a);
+// a = a << 1;
+// uint u = 0x80000000;
+// u = 0xa;                    // 00000 0000 .... 1010
+// Console.WriteLine("u " + u);
+// u = u & 0x40000000;                 //  
+// Console.WriteLine("u "+ u);
+// u = u | 0x40000000; // 0x40000000
+// Console.WriteLine("u " + u);
+// Console.WriteLine(a);
+
+// if((u & 0x1) == 1) // 0010 & 0001
+// {
+//     Console.WriteLine("u tektir");
+// }
+// else
+// {
+//     Console.WriteLine("u çifttir");
+// }
 
 // sayıların sol yada sağ shift edilmesi 
 // rotate   sayılar sağ veya sola shift
@@ -331,7 +333,7 @@ else
 // x or 0 = x
 // 00000000100
 //a = a | 4;
-//a = a | 0x4;
+//a = a | 0x4; 
 //-----------------------------------------------------------------------------
 // 32. biti bir yapmaya çalışalım
 // 1000000..000
@@ -340,7 +342,7 @@ else
 //Console.WriteLine(a);
 //-----------------------------------------------------------------------------
 // 9. ve 10. bitleri bir yapalım
-// 0000 0011 0000 0000 --> maske --> 0x00000300 --> 0x300
+// 0000 0011 0000 0000 --> maske --> 0x00000300 --> 0x300                0x300        1100 1111 1111
 //int a = 0;
 //a = a | 0x300;
 //Console.WriteLine(a);
@@ -354,30 +356,30 @@ else
 //------------------------------------------------------------------------------
 // 27. biti bir 28. biti sıfır yapalım
 // maske --> 0000 0100 0000 0000 0000 0000 0000 0000 --> hex karş. 0x04000000 27.bit 1 or yapılacak
-// maske --> 1111 0111 1111 1111 1111 1111 1111 1111 --> hex karş. 0xf7ffffff 28. bit 0 and yapılacak
+// maske --> 1111 0011 1111 1111 1111 1111 1111 1111 --> hex karş. 0xf7ffffff 28. bit 0 and yapılacak
 //------------------------------------------------------------------------------
-// 1024 e kadar sayıları binary ekrana bastıralım
-/*int[] bin = new int[10]; // Dizinin boyutunu 10 olarak değiştirdik, çünkü 10 basamaklı en büyük binary sayı 1023'dür.
-int adt = 0;
+// 1024 e kadar sayıları binary ekrana bastıralım ---> hatalı
+// int[] bin = new int[10]; // Dizinin boyutunu 10 olarak değiştirdik, çünkü 10 basamaklı en büyük binary sayı 1023'dür.
+// int adt = 0;
 
-while (adt < 1024)
-{
-    for (int i = 9; i >= 0; i--) // Diziyi tersten yazdırmak için döngü sırasını değiştirdik.
-    {
-        Console.Write(bin[i]);
-    }
-    Console.WriteLine("");
-    adt++;
+// while (adt < 1024)
+// {
+//     for (int i = 9; i >= 0; i--) // Diziyi tersten yazdırmak için döngü sırasını değiştirdik.
+//     {
+//         Console.Write(bin[i]);
+//     }
+//     Console.WriteLine("");              
+//     adt++;
 
-    bin[0]++;
-    int lvl = 0;
-    while (lvl < 9 && bin[lvl] == 2) // Döngünün sona ermesi için 'lvl < 9' koşulunu ekledik.
-    {
-        bin[lvl] = 0;
-        lvl++;
-        bin[lvl]++;
-    }
-}*/
+//     bin[0]++;
+//     int lvl = 0;
+//     while (lvl < 9 && bin[lvl] == 2) // Döngünün sona ermesi için 'lvl < 9' koşulunu ekledik.
+//     {
+//         bin[lvl] = 0;
+//         lvl++;
+//         bin[lvl]++;
+//     }
+// }
 //------------------------------------------------------------------------------
 // shift kaydırma
 //  (>>) sağa shift (<<) sola shift
@@ -387,7 +389,7 @@ while (adt < 1024)
 // bir sayının binary karşılığında kaç adet bir var
 /*
 long a = 534534;
-uint b = 1;
+uint b = 1; //10000000
 int adt = 0;
 a = 0xffffffff;
 System.Console.WriteLine(a);
@@ -416,26 +418,26 @@ Console.WriteLine(adt);
 //int a = 345345433;
 //------------------------------------------------------------------------------     ****** BURADA NE YAPILIYOR TAM ANLAMADIM BİR DAHA BAKACAĞIM
 // a=b mi ?
-/*
-long a = 0xf0f0f0f0;
-long c = a;
-uint b = 0;
-for (int i = 0; i < 33; i++)
-{
-    if ((a&1) == 1)
-    {
-        b = b | 1;
-    }
-    else
-    {
-        b = b & 0xfffffffe;
-    }
-    b = b << 1;
-    a = a >> 1;
-}
-Console.WriteLine(b);
-Console.WriteLine(c);
-*/
+
+// long a = 0xf0f0f0f0;
+// long c = a;
+// uint b = 0;
+// for (int i = 0; i < 33; i++)
+// {
+//     if ((a&1) == 1)  
+//     {
+//         b = b | 1;
+//     }
+//     else
+//     {
+//         b = b & 0xfffffffe;
+//     }
+//     b = b << 1;
+//     a = a >> 1;
+// }
+// Console.WriteLine(b);
+// Console.WriteLine(c);
+
 //------------------------------------------------------------------------------
 //25.03.2024
 // binary search
@@ -498,7 +500,7 @@ for (int i = 1; i < 100000; i=i+2)
 // LONGEST COMMON SUBSTRING 
 
 // string st1 = "zabz123zdefz67890az";
-// string st2 = "xxabx123xxdefxxx6790a";
+// string st2 = "xxabx123xxdefz6xxx6z90a";
 // int eb = 0;
 // //1.ÇÖZÜM
 
@@ -534,26 +536,26 @@ for (int i = 1; i < 100000; i=i+2)
 
 
 
-// string s1 = "abadeghıjklm";
-// string s2 = "absıaklm";
-// int[,] lcs = new int[s1.Length, s2.Length];
-// int eblcs = 0;
-// for (int i = 0; i < s1.Length; i++)
-// {
-//     for (int j = 0; j < s2.Length; j++)
-//     {
-//         if (s1[i] == s2[j])
-//         {
-//             if (i == 0 || j == 0) { lcs[i, j] = 1; }
-//             else { lcs[i, j] = lcs[i - 1, j - 1] + 1; }
-//             if (eblcs < lcs[i, j]) { eblcs = lcs[i, j]; }
-//         }
+string s1 = "abadeghıjklm";
+string s2 = "absıaklm";
+int[,] lcs = new int[s1.Length, s2.Length];
+int eblcs = 0;
+for (int i = 0; i < s1.Length; i++)
+{
+    for (int j = 0; j < s2.Length; j++)
+    {
+        if (s1[i] == s2[j])
+        {
+            if (i == 0 || j == 0) { lcs[i, j] = 1; }
+            else { lcs[i, j] = lcs[i - 1, j - 1] + 1; }
+            if (eblcs < lcs[i, j]) { eblcs = lcs[i, j]; }
+        }
 
 
-//     }
+    }
 
-// }
-// System.Console.WriteLine("Longest common substring length 'eblcs': " +eblcs);
+}
+System.Console.WriteLine("Longest common substring length 'eblcs': " +eblcs);
 
 
 //2.ÇÖZÜM
@@ -586,30 +588,33 @@ for (int i = 0; i < st1.Length; i++)
 System.Console.WriteLine(eb);
 
 */
-/*static void Lcss(lcss,int[,]x,string st1, string st2,int indis)
-{
-    int i = indis / st1.Length;
-    int j = indis % st1.Length;
-    if (indis >= st1.Length*st2.Length)
-    {
-        return;
-    }
-    if (st1[i]==st2[j])
-        {
-            if (i==0 || j==0)
-            {
-                lcss[i,j] = 1;
-            }else
-            {
-                lcss[i,j] = lcss[i-1,j-1]+1;
-                if (eb<lcss[i,j])
-                {
-                    eb = lcss[i,j];
-                }
-            }
-        }
+// static void Lcss(int[,] lcss,int[,]x,string st1, string st2,int indis)
+// {
+//     int i = indis / st1.Length;
+//     int j = indis % st1.Length;
+//     if (indis >= st1.Length*st2.Length)
+//     {
+//         return;
+//     }
+//     if (st1[i]==st2[j])
+//         {
+//             if (i==0 || j==0)
+//             {
+//                 lcss[i,j] = 1;
+//             }else
+//             {
+//                 lcss[i,j] = lcss[i-1,j-1]+1;
+//                 if (eb<lcss[i,j])
+//                 {
+//                     eb = lcss[i,j];
+//                 }
+//             }
+//         }
 
-}*/
+
+// }
+
+// System.Console.WriteLine("hi");
 //----------------------------------------------------------------------------------
 //LONGEST COMMON SUBSEQUENCE   //LONGEST PALİNDROMİC WORD
 // a sayısının 10,11,12,13 ve 14. bitlerden oluşan bit grubunu  1 arttıralım
