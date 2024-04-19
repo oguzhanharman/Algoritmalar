@@ -610,7 +610,7 @@ uzun sayı grubunun uzunluğunu ekrana yazan c# programını yazınız.
 
 // }
 #endregion
-#region Şimayla çözdüklerimiz
+#region ileri seviye birkaç soru
 //peki ya 128 değilde 256,512,1024 bitlik bir sayı deseydik ne yapacaktık?
 // bunun çözümü sayı kaç bitlik olursa olsun otomatik çözüm üretmek
 // bence aşağıdaki çözüm baya
@@ -643,7 +643,6 @@ uzun sayı grubunun uzunluğunu ekrana yazan c# programını yazınız.
 // Console.WriteLine(binaryString2);
 
 
-// #endregion
 // #region 2023 sınav sorusu
 /*
 --------------------------------------------------------------------------------------------------------------------------------------------
@@ -696,7 +695,7 @@ en fazla yanyana 1 lerin sayısını recursive metodunu
 //   return enuzunBirler(X >> 1, max, adet);
 // }
 
-// ulong a = 0x10;
+// ulong a = 0xf0f8;
 // ulong b = 0;
 // ulong sonuc = (a << 32) | b;
 
@@ -704,7 +703,8 @@ en fazla yanyana 1 lerin sayısını recursive metodunu
 
 // --------------------------------------------------------------------------------------------------------------------------------------------
 
-// bir dizinin tüm alt kümlerini yazan script
+// //bir dizinin tüm alt kümlerini yazan script
+
 
 // int[] x = { 1, 2, 3, 8, 5 };
 // uint b = 1;
@@ -713,16 +713,50 @@ en fazla yanyana 1 lerin sayısını recursive metodunu
 //   b = 1;
 //   for (int j = 0; j < 5; j++)
 //   {
-//     if ((i & b) != 0)
+
+
+//     long sonuc = i & b;
+
+//     if ( sonuc != 0)
 //     {
-//       Console.Write(x[j]);
+//       Console.Write(" " + x[j]);
 //     }
 //     b = b << 1;
 //   }
 //   Console.WriteLine();
 // }
 
-// RECURSİVE
+// RECURSİVE --- BASARILI
+
+
+// static void altKumeRecursive(int[] dizi, int altKumeSayısı, uint altKumeSayacı, uint bit, long b)
+// {
+//   if (altKumeSayacı >= altKumeSayısı) return;
+
+//   if (bit > dizi.Length)
+//   {
+//     // burada tekrar bir kontrol yapmamızın sebebi son aşamada küme sayacı 1 artmış olabilir
+//     if (altKumeSayacı < altKumeSayısı)
+//     {
+//       Console.Write("\nAlt küme {0}: ", altKumeSayacı + 1);
+//       altKumeRecursive(dizi, altKumeSayısı, altKumeSayacı + 1, 0, 1);
+//     }
+//     return;
+//   }
+
+//   if ((altKumeSayacı & b) != 0 && bit < dizi.Length)
+//   {
+
+//     Console.Write("[{0}]", dizi[bit]);
+//   }
+
+//   altKumeRecursive(dizi, altKumeSayısı, altKumeSayacı, bit + 1, b << 1);
+// }
+
+// altKumeRecursive(x, 32, 0, 0, 1);
+
+
+// RECURSİVE --- HATALI
 
 // int[] x = { 1, 2, 3, 8, 5 };
 // FindSubsets(x, 0, new int[x.Length], 0);
@@ -749,14 +783,109 @@ en fazla yanyana 1 lerin sayısını recursive metodunu
 //   FindSubsets(x, index + 1, subset, subsetIndex + 1);
 // }
 
-
-
 // int[] a = { 1, 2, 3, 8, 5 };
 // FindSubsets(a, 0, new int[a.Length], 0);
 
+
+// --------------------------------------------------------------------------------------------------------------------------------------------
+// alt kümelerin toplamı 10 olan kaç alt küme vardır
+
+// static int altKumeRecursive(int[] dizi, int altKumeSayısı, int altKumeSayacı, int bit, int b,   int adet, int toplam)
+// {
+//   if (altKumeSayacı >= altKumeSayısı) return (int)adet;
+
+//   if (bit >= dizi.Length)
+//   {
+//     if (altKumeSayacı < altKumeSayısı)
+//     {
+//       if (toplam == 5) adet++;
+//       return altKumeRecursive(dizi, altKumeSayısı, altKumeSayacı + 1, 0, 1, adet, 0);
+//     }
+//     return adet;
+//   }
+
+//   if ((altKumeSayacı & b) != 0 && bit < dizi.Length)
+//   {
+//     toplam += dizi[bit];
+//     return altKumeRecursive(dizi, altKumeSayısı, altKumeSayacı, bit + 1, b << 1, adet, toplam);
+//   }
+
+//   return altKumeRecursive(dizi, altKumeSayısı, altKumeSayacı, bit + 1, b << 1, adet, toplam);
+// }
+
+
+// int[] x = { 1, 2, 3, 8, 5, 5 };
+// Console.WriteLine(altKumeRecursive(x, 32, 0, 0, 1, 0, 0));
+
+
 #endregion
+#region 128 bitlik binary sayıyı 10 luk sisteme dönüştürmek
+// uint a1 = 0x00000001;
+// uint a2 = 0x00000001;
+// uint a3 = 0x00000001;
+// uint a4 = 0x00000001;
+// uint aktif = a1;
+// ulong basamak = 1;
+// ulong sayı = 0;
+// uint maske = 1;
+
+// for (int i = 0; i < 128; i++)
+// {
+//   if (i == 32)
+//   {
+//     aktif = a2;
+//     maske = 1;
+//   }
+//   if (i == 64)
+//   {
+//     aktif = a3;
+//     maske = 1;
+//   }
+//   if (i == 96)
+//   {
+//     aktif = a4;
+//     maske = 1;
+//   }
+//   uint bit = aktif & maske; // 0 mı 1 mi ?
+//   if (bit != 0)
+//     sayı = sayı + basamak;
+//   else
+//     basamak = basamak * 2;
+//   maske = maske << 1;
+// }
+// Console.WriteLine(sayı);
+
+#endregion
+#region dizilerle çarpmak
 
 
+// İlk diziyi tanımla ve değerlerini ata
+int[] dizi1 = { 1, 2, 5 };
+
+// İkinci diziyi tanımla ve değerlerini ata
+int[] dizi2 = { 3, 4, 6 };
+
+// İki dizinin boyutunu kontrol et
+if (dizi1.Length != dizi2.Length)
+{
+  Console.WriteLine("Dizilerin boyutları eşit olmalıdır.");
+  return;
+}
+
+// Sonucu tutacak değişkeni tanımla ve 1 olarak başlat
+int sonuc = 1;
+
+// Dizilerin her bir elemanını çarp
+for (int i = 0; i < dizi1.Length; i++)
+{
+  sonuc *= dizi1[i] * dizi2[i];
+}
+
+// Sonucu ekrana yazdır
+Console.WriteLine("Çarpım sonucu: " + sonuc);
+
+
+#endregion
 
 
 

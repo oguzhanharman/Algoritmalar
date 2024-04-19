@@ -256,7 +256,65 @@ Console.WriteLine(a);*/
 // {
 //     System.Console.WriteLine(item);
 // }
+//------------------------------------------------------------------------------
+/* bir dizi bir sayı olarak görmek üzerine işlem yapmak
+yani böyle düşün
+            int[] x = { 1, 9, 4,4 };
+            int[] y = { 4, 9, 1,3 };
+bu iki dizi x*2+y denklemin çözümünü istiyor
+sonuç 1944*2+4913 = 8801 olacak 
+tabi stringe çevirmek yasaktı, elde kalanı göz önüne alarak çözülür
+*/
+int[] x = { 1, 9, 4, 4 };
+int[] y = { 4, 9, 1, 3 };
+int[] r = new int[x.Length];
+int k = (1944) * 2 + 4913;
+for (int i = 0; i < x.Length; i++)
+{
+    r[i] = x[i];
+}
+for (int i = x.Length - 1; i >= 0; i--)
+{
+    int tmp = x[i] + y[i] + r[i];
+    int kalan = tmp % 10;
+    int elde = (tmp - kalan) / 10;
+    r[i] = kalan;
+    if (i != 0) r[i - 1] += elde;
+}
+for (int i = 0; i < 4; i++)
+{
+    Console.Write(r[i]);
+}
+Console.WriteLine();
+Console.WriteLine(k);
+Console.ReadKey();
 
+
+
+// 2. çözüm
+
+int[] x = { 1, 9, 4, 4 };
+int[] y = { 4, 9, 1, 3 };
+int[] r = new int[x.Length];
+int elde = 0;
+int kalan = 0;
+int tmp = 0;
+for (int i = x.Length - 1; i >= 0; i--)
+{
+    tmp = x[i] * 2 + y[i] + elde;
+    kalan = tmp % 10;
+    elde = tmp / 10;
+    r[i] = kalan;
+}
+Console.WriteLine(string.Join("", r));
+
+
+
+
+// foreach (var item in carpimlarDizisi(x, y))
+// {
+//     System.Console.WriteLine(item);
+// }
 
 //------------------------------------------------------------------------------
 // bitwise bitsel işlemler
@@ -367,7 +425,7 @@ else
 //     for (int i = 9; i >= 0; i--) // Diziyi tersten yazdırmak için döngü sırasını değiştirdik.
 //     {
 //         Console.Write(bin[i]);
-//     }
+//     }ƒ
 //     Console.WriteLine("");              
 //     adt++;
 
