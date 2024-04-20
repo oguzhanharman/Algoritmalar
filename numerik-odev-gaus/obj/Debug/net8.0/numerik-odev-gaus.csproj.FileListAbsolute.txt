@@ -1,0 +1,15 @@
+/Users/sevketugurel/Desktop/Algoritmalar/numerik-odev-gaus/bin/Debug/net8.0/numerik-odev-gaus
+/Users/sevketugurel/Desktop/Algoritmalar/numerik-odev-gaus/bin/Debug/net8.0/numerik-odev-gaus.deps.json
+/Users/sevketugurel/Desktop/Algoritmalar/numerik-odev-gaus/bin/Debug/net8.0/numerik-odev-gaus.runtimeconfig.json
+/Users/sevketugurel/Desktop/Algoritmalar/numerik-odev-gaus/bin/Debug/net8.0/numerik-odev-gaus.dll
+/Users/sevketugurel/Desktop/Algoritmalar/numerik-odev-gaus/bin/Debug/net8.0/numerik-odev-gaus.pdb
+/Users/sevketugurel/Desktop/Algoritmalar/numerik-odev-gaus/obj/Debug/net8.0/numerik-odev-gaus.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sevketugurel/Desktop/Algoritmalar/numerik-odev-gaus/obj/Debug/net8.0/numerik-odev-gaus.AssemblyInfoInputs.cache
+/Users/sevketugurel/Desktop/Algoritmalar/numerik-odev-gaus/obj/Debug/net8.0/numerik-odev-gaus.AssemblyInfo.cs
+/Users/sevketugurel/Desktop/Algoritmalar/numerik-odev-gaus/obj/Debug/net8.0/numerik-odev-gaus.csproj.CoreCompileInputs.cache
+/Users/sevketugurel/Desktop/Algoritmalar/numerik-odev-gaus/obj/Debug/net8.0/numerik-odev-gaus.sourcelink.json
+/Users/sevketugurel/Desktop/Algoritmalar/numerik-odev-gaus/obj/Debug/net8.0/numerik-odev-gaus.dll
+/Users/sevketugurel/Desktop/Algoritmalar/numerik-odev-gaus/obj/Debug/net8.0/refint/numerik-odev-gaus.dll
+/Users/sevketugurel/Desktop/Algoritmalar/numerik-odev-gaus/obj/Debug/net8.0/numerik-odev-gaus.pdb
+/Users/sevketugurel/Desktop/Algoritmalar/numerik-odev-gaus/obj/Debug/net8.0/numerik-odev-gaus.genruntimeconfig.cache
+/Users/sevketugurel/Desktop/Algoritmalar/numerik-odev-gaus/obj/Debug/net8.0/ref/numerik-odev-gaus.dll
