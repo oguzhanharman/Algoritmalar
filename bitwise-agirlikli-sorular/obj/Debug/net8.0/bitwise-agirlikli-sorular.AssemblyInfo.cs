@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("bitwise-agirlikli-sorular")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d534cc9542d4d6258ea80bc63b0052704eeba53e")]
 [assembly: System.Reflection.AssemblyProductAttribute("bitwise-agirlikli-sorular")]
 [assembly: System.Reflection.AssemblyTitleAttribute("bitwise-agirlikli-sorular")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/sevketugurel/Desktop/Algoritmalar/algo5/algo5.csproj": {}
+    "/Users/oguzhanharman/Desktop/Algoritmalar/algo5/algo5.csproj": {}
   },
   "projects": {
-    "/Users/sevketugurel/Desktop/Algoritmalar/algo5/algo5.csproj": {
+    "/Users/oguzhanharman/Desktop/Algoritmalar/algo5/algo5.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/sevketugurel/Desktop/Algoritmalar/algo5/algo5.csproj",
+        "projectUniqueName": "/Users/oguzhanharman/Desktop/Algoritmalar/algo5/algo5.csproj",
         "projectName": "algo5",
-        "projectPath": "/Users/sevketugurel/Desktop/Algoritmalar/algo5/algo5.csproj",
-        "packagesPath": "/Users/sevketugurel/.nuget/packages/",
-        "outputPath": "/Users/sevketugurel/Desktop/Algoritmalar/algo5/obj/",
+        "projectPath": "/Users/oguzhanharman/Desktop/Algoritmalar/algo5/algo5.csproj",
+        "packagesPath": "/Users/oguzhanharman/.nuget/packages/",
+        "outputPath": "/Users/oguzhanharman/Desktop/Algoritmalar/algo5/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/sevketugurel/.nuget/NuGet/NuGet.Config"
+          "/Users/oguzhanharman/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -53,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
